@@ -4,8 +4,15 @@ import java.text.DecimalFormat;
 import java.util.Scanner;
 
 public class GalvenaKlase {
+	static Scanner scan= new Scanner(System.in);
 	public static void main(String[] args) {
-		int studSk, kritSk;
+		int maxStudenti = 30;
+		String[] vardi = new String[maxStudenti];
+		int[] majasdarbs = new int[maxStudenti];
+		int[] pd = new int[maxStudenti];
+		int[] eksamens = new int[maxStudenti];
+		int[] svari = new int[3];
+		int studSk = 0, kritSk;
 		Scanner scan = new Scanner(System.in);
 		DecimalFormat df = new DecimalFormat("0.#");
 		int izvele;
@@ -31,6 +38,10 @@ public class GalvenaKlase {
 			scan.nextLine();
 			switch (izvele) {
 			case 1:
+				System.out.print("Cik studentus vēlies ievadīt? ");
+				studSk = scan.nextInt();
+				scan.nextLine();
+				MetoduKlase.ievaditStudentus(scan, vardi, majasdarbs, pd, eksamens, studSk);break;
 			case 2:
 			case 3:
 			case 4:
