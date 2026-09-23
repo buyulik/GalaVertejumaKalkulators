@@ -13,7 +13,6 @@ public class GalvenaKlase {
 		int[] eksamens = new int[maxStudenti];
 		int[] svari = new int[3];
 		int studSk = 0, kritSk;
-		Scanner scan = new Scanner(System.in);
 		DecimalFormat df = new DecimalFormat("0.#");
 		int izvele;
 		do {
@@ -45,7 +44,7 @@ public class GalvenaKlase {
 			case 2:
 			case 3:
 			case 4:
-			case 5:
+			case 5:MetoduKlase.ievaditAtzimi(scan, "Ievadiet atzīmi");break;
 			case 6:
 			case 7:
 			case 8:
