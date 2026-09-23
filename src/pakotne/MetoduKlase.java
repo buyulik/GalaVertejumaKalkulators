@@ -42,4 +42,21 @@ public class MetoduKlase {
 		}
 		scan.nextLine();
 	}
+	//Norāda vērtējumu kādu ieguvis katrs audzēknis par katru kritēriju
+	public static void ievaditVertejumus (Scanner scan,String[] studenti, String[] kriteriji, int[][] kriterijaVertejums) {
+		for (int i = 0; i < studenti.length; i++) {
+			for (int j = 0; j < kriteriji.length; j++) {
+			do {
+				System.out.println("\nIevadi " +studenti[i]+ " vertejumu par kritēriju "+ kriteriji[i]+" (1-10):");
+				while(!scan.hasNextInt()) {
+					System.out.println("\nIevadi " +studenti[i]+ " vertejumu par kritēriju "+ kriteriji[i]+":");
+					scan.next();
+				}
+				kriterijaVertejums[i][j]=scan.nextInt();
+			}while(kriterijaVertejums[i][j]<1||kriterijaVertejums[i][j]>10);
+		}
+	}
+		scan.nextLine();
+	}
+	
 }
