@@ -1,5 +1,6 @@
 package pakotne;
 
+import java.text.DecimalFormat;
 import java.util.Scanner;
 
 public class MetoduKlase {
@@ -58,5 +59,26 @@ public class MetoduKlase {
 	}
 		scan.nextLine();
 	}
-	
-}
+	// Gala vērtējuma aprēķināšana
+	public static void aprekinatGalaVertejumu (String[] studenti, String[] kriteriji, int[][] kriterijaVertejums,double[] semestraVertejums, DecimalFormat df) {
+		double rezultats;
+		for (int i = 0; i < studenti.length; i++) {
+			for (int j = 0; j < kriteriji.length; j++) {
+			rezultats+=((double)kriterijasSvars[j]/100)*kriterijaVertejums[i][j];
+		}
+			semestraVertejums[i]=rezultats;
+	}
+		System.out.println("/n--- GALA VĒRTĒJUMI ---");
+		for (int i = 0; i < studenti.length; i++) {
+			for (int j = 0; j < kriteriji.length; j++) {
+		System.out.println("\nStudenta " +studenti[i]+ " vertejumu par kritēriju "+ kriteriji[i]+" ir "+kriterijaVertejums[i][j]);
+			}
+			System.out.println("Semestra vērtējums ir "+df.format(semestraVertejums[i])+" balles");
+		}
+	}
+	public static void labotKriterijuSvaru(Scanner scan, String[] studenti,String[] kriteriji, int[][] kriterijaVertejums) {
+		System.out.println("Kritēriju labošana");
+		System.out.println("Jāievada visi svari no jauna!");
+		ievaditKriterijuSvarus(scan,kriteriji,kriterijaVertejums);
+	}
+	}

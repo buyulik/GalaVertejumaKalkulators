@@ -62,9 +62,15 @@ public class GalvenaKlase {
 				}
 				MetoduKlase.ievaditVertejumus(scan,studenti,kriteriji,kriterijaVertejums);break;
 			case 5:
-			case 6:
+			case 6:if(kriteriji==null) {
+				System.out.println("Vispirms ievadi kriterijus"); break;
+			}
+			MetoduKlase.labotKriterijuSvaru(scan,studenti,kriteriji,kriterijaVertejums);break;
 			case 7:
-			case 8:
+			case 8:if(kriterijaVertejums==null) {
+				System.out.println("Vispirms ievadiet vērtējumus");break;
+			}
+			MetoduKlase.aprekinatGalaVertejumu(studenti,kriteriji,kriterijaVertejums,semestraVertejums,df); break;
 			case 9:
 			case 10:
 			case 11:System.out.println("Programma darbu beidz.");break;
