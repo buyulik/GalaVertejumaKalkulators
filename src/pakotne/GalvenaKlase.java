@@ -6,13 +6,12 @@ import java.util.Scanner;
 public class GalvenaKlase {
 	static Scanner scan= new Scanner(System.in);
 	public static void main(String[] args) {
-		int maxStudenti = 30;
-		String[] vardi = new String[maxStudenti];
-		int[] majasdarbs = new int[maxStudenti];
-		int[] pd = new int[maxStudenti];
-		int[] eksamens = new int[maxStudenti];
-		int[] svari = new int[3];
-		int studSk = 0, kritSk;
+		String[] studenti =null;
+		String[] kriteriji =null;
+		int[] kriterijasSvars=null;
+		int[] kriterijasVertejums=null;
+		int[] semestraVertejums=null;
+		int studSk = 0, kritSk=0;
 		DecimalFormat df = new DecimalFormat("0.#");
 		int izvele;
 		do {
@@ -39,12 +38,20 @@ public class GalvenaKlase {
 			case 1:
 				System.out.print("Cik studentus vēlies ievadīt? ");
 				studSk = scan.nextInt();
+				studenti=new String[studSk];
 				scan.nextLine();
-				MetoduKlase.ievaditStudentus(scan, vardi, majasdarbs, pd, eksamens, studSk);break;
+				MetoduKlase.ievaditStudentus(scan,studenti);break;
 			case 2:
-			case 3:
+				if(studenti==null) {
+					System.out.println("Vispirms ievadi audzēkņus");break;
+				}
+				System.out.print("Cik būs kritēriju?");kritSk=scan.nextInt();
+				kriteriji=new String[kritSk];
+				kriterijasSvars=new int[kritSk];
+				MetoduKlase.ievaditKriterijus(scan,kriteriji);break;
+			case 3:MetoduKlase.ievaditKriterijuSvarus(scan,kriteriji,kriterijasSvars);break;
 			case 4:
-			case 5:MetoduKlase.ievaditAtzimi(scan, "Ievadiet atzīmi");break;
+			case 5:
 			case 6:
 			case 7:
 			case 8:
